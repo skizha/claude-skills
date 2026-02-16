@@ -1,0 +1,21 @@
+{
+  "name": "skizha-skills",
+  "owner": {
+    "name": "Sanjesh"
+  },
+  "metadata": {
+    "description": "Community skills for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "humanize-skills",
+      "description": "Remove AI writing patterns from text. Detects and rewrites 24 categories of AI-generated patterns based on Wikipedia's Signs of AI writing guide.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/humanize"
+      ]
+    }
+  ]
+}

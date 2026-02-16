@@ -13,6 +13,3 @@ desktop.ini
 __pycache__/
 *.pyc
 *.pyo
-
-# Packaged skill files (build artifacts)
-*.skill

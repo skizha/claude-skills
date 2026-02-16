@@ -1,34 +1,31 @@
-# claude-skills
+# agent-skills
 
-A collection of skills (plugins) for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that add specialized workflows and domain knowledge.
+A plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that adds specialized workflows and domain knowledge.
 
-## Available skills
+## Available plugins
 
-| Skill | What it does |
-|-------|-------------|
-| [humanize](skills/humanize) | Detects and rewrites 24 categories of AI-generated text patterns. Based on Wikipedia's "Signs of AI writing" guide. |
+| Plugin | Skills | What it does |
+|--------|--------|-------------|
+| humanize-skills | [humanize](skills/humanize) | Detects and rewrites 24 categories of AI-generated text patterns. Based on Wikipedia's "Signs of AI writing" guide. |
 
 ## Installation
 
-Copy any skill folder into your Claude Code skills directory:
+### From the marketplace
 
-```bash
-# clone the repo
-git clone https://github.com/skizha/claude-skills.git
-
-# copy the skill you want
-cp -r claude-skills/skills/humanize ~/.claude/skills/
+```
+/plugin marketplace add skizha/agent-skills
+/plugin install humanize-skills@skizha-skills
 ```
 
-Or grab just one skill without cloning the whole repo:
+The skill will be available in your next Claude Code session. Invoke it with `/humanize` or by asking Claude to humanize text.
+
+### Local testing
+
+Load the repo directly as a plugin directory:
 
 ```bash
-# using gh
-gh repo clone skizha/claude-skills -- --depth 1 --filter=blob:none
-cp -r claude-skills/skills/humanize ~/.claude/skills/
+claude --plugin-dir /path/to/agent-skills
 ```
-
-The skill will be available in your next Claude Code session.
 
 ## Usage
 
@@ -40,22 +37,29 @@ Skills trigger automatically based on your prompt. For example, the humanize ski
 
 You can also invoke it directly with `/humanize`.
 
-## Skill structure
-
-Each skill is a self-contained folder:
+## Marketplace structure
 
 ```
-skills/
-└── skill-name/
-    ├── SKILL.md           # required -- instructions and metadata
-    ├── references/        # optional -- detailed docs loaded on demand
-    ├── scripts/           # optional -- executable code
-    └── assets/            # optional -- templates, images, etc.
+agent-skills/
+├── .claude-plugin/
+│   └── marketplace.json    # marketplace manifest
+└── skills/
+    └── skill-name/
+        ├── SKILL.md           # required -- instructions and metadata
+        ├── references/        # optional -- detailed docs loaded on demand
+        ├── scripts/           # optional -- executable code
+        └── assets/            # optional -- templates, images, etc.
 ```
+
+The `marketplace.json` defines plugins, each of which bundles one or more skills. Each skill lives under `skills/` with at least a `SKILL.md` containing YAML frontmatter (`description` field) and markdown instructions.
 
 ## Contributing
 
-To add a new skill, create a folder under `skills/` with at least a `SKILL.md` file containing YAML frontmatter (`name` and `description` fields) and markdown instructions.
+To add a new skill:
+
+1. Create a folder under `skills/` with a `SKILL.md` file
+2. Add your plugin entry to `.claude-plugin/marketplace.json` with a `name`, `description`, and `skills` array pointing to your skill folders
+3. Submit a PR
 
 ## License
 
