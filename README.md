@@ -7,6 +7,7 @@ A plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude
 | Plugin | Skills | What it does |
 |--------|--------|-------------|
 | humanize-skills | [humanize](skills/humanize) | Detects and rewrites 24 categories of AI-generated text patterns. Based on Wikipedia's "Signs of AI writing" guide. |
+| sql-server-query-tuner | [sql-server-query-tuner](skills/sql-server-query-tuner) | SQL Server query performance tuning — analyzes execution plans, identifies anti-patterns, recommends indexes, rewrites slow queries, and runs DMV diagnostics against live instances. |
 
 ## Installation
 
@@ -17,7 +18,7 @@ A plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude
 /plugin install humanize-skills@skizha-skills
 ```
 
-The skill will be available in your next Claude Code session. Invoke it with `/humanize` or by asking Claude to humanize text.
+The skills will be available in your next Claude Code session. Invoke them with `/humanize` or by asking Claude to humanize text, or trigger the SQL tuner by asking Claude to tune a query.
 
 ### Local testing
 
@@ -29,13 +30,23 @@ claude --plugin-dir /path/to/agent-skills
 
 ## Usage
 
-Skills trigger automatically based on your prompt. For example, the humanize skill activates when you say things like:
+Skills trigger automatically based on your prompt. For example:
 
+**Humanize** — activates when you say things like:
 - "humanize this text"
 - "make this sound less robotic"
 - "remove AI writing patterns from this file"
 
 You can also invoke it directly with `/humanize`.
+
+**SQL Server Query Tuner** — activates when you say things like:
+- "tune this query"
+- "why is this SQL slow"
+- "check my database for missing indexes"
+- "analyze this execution plan"
+- "optimize this SQL Server query"
+
+Supports both pasting queries/execution plans for analysis and running DMV diagnostics against a live SQL Server instance.
 
 ## Marketplace structure
 
