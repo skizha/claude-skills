@@ -7,6 +7,7 @@ A plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude
 | Plugin | Skills | What it does |
 |--------|--------|-------------|
 | humanize-skills | [humanize](skills/humanize) | Detects and rewrites 24 categories of AI-generated text patterns. Based on Wikipedia's "Signs of AI writing" guide. |
+| prompt-creator | [prompt-creator](skills/prompt-creator) | Expert prompt engineering for AI models (especially Claude). Creates prompts from scratch, improves underperforming prompts, designs system prompts, structures chain-of-thought and few-shot examples, and builds RAG and agentic prompts. Based on Anthropic's official prompt engineering docs. |
 | sql-server-query-tuner | [sql-server-query-tuner](skills/sql-server-query-tuner) | SQL Server query performance tuning — analyzes execution plans, identifies anti-patterns, recommends indexes, rewrites slow queries, and runs DMV diagnostics against live instances. |
 
 ## Installation

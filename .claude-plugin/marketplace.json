@@ -18,6 +18,15 @@
       ]
     },
     {
+      "name": "prompt-creator",
+      "description": "Expert prompt engineering for AI models (especially Claude). Creates prompts from scratch, improves underperforming prompts, designs system prompts, structures chain-of-thought and few-shot examples, and builds RAG and agentic prompts. Based on Anthropic's official prompt engineering docs.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/prompt-creator"
+      ]
+    },
+    {
       "name": "sql-server-query-tuner",
       "description": "SQL Server query performance tuning. Analyzes execution plans, identifies anti-patterns, recommends indexes, rewrites slow queries, and runs DMV diagnostics against live instances.",
       "source": "./",
