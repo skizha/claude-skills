@@ -9,6 +9,7 @@ A plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude
 | humanize | [humanize](skills/humanize) | Detects and rewrites 24 categories of AI-generated text patterns. Based on Wikipedia's "Signs of AI writing" guide. |
 | prompt-creator | [prompt-creator](skills/prompt-creator) | Expert prompt engineering for AI models (especially Claude). Creates prompts from scratch, improves underperforming prompts, designs system prompts, structures chain-of-thought and few-shot examples, and builds RAG and agentic prompts. Based on Anthropic's official prompt engineering docs. |
 | sql-server-query-tuner | [sql-server-query-tuner](skills/sql-server-query-tuner) | SQL Server query performance tuning — analyzes execution plans, identifies anti-patterns, recommends indexes, rewrites slow queries, and runs DMV diagnostics against live instances. |
+| linkedin-articles | [linkedin-articles](skills/linkedin-articles) | Write and optimize LinkedIn articles — 5 structure templates, 8 hook formulas, headline patterns, SEO keyword placement, and hashtag strategy. |
 
 ## Installation
 
@@ -58,6 +59,15 @@ Covers all major techniques: role/persona, few-shot, chain-of-thought, prompt ch
 - "optimize this SQL Server query"
 
 Supports both pasting queries/execution plans for analysis and running DMV diagnostics against a live SQL Server instance.
+
+**LinkedIn Articles** — activates when you say things like:
+- "write a LinkedIn article about [topic]"
+- "optimize my LinkedIn article"
+- "write a hook for my article"
+- "add hashtags to this article"
+- "improve my article structure"
+
+Includes 5 article structure templates (Problem-Solution, Listicle, Story-Driven, How-To, Contrarian), 8 hook formulas with examples, headline patterns, SEO keyword placement guidance, and a hashtag strategy (broad/mid/niche mix). Delivers ready-to-paste output with hashtags.
 
 ## Marketplace structure
 
