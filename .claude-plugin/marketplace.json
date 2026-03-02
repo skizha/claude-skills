@@ -9,40 +9,9 @@
   },
   "plugins": [
     {
-      "name": "humanize",
-      "description": "Remove AI writing patterns from text. Detects and rewrites 24 categories of AI-generated patterns based on Wikipedia's Signs of AI writing guide.",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/humanize"
-      ]
-    },
-    {
-      "name": "prompt-creator",
-      "description": "Expert prompt engineering for AI models (especially Claude). Creates prompts from scratch, improves underperforming prompts, designs system prompts, structures chain-of-thought and few-shot examples, and builds RAG and agentic prompts. Based on Anthropic's official prompt engineering docs.",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/prompt-creator"
-      ]
-    },
-    {
-      "name": "sql-server-query-tuner",
-      "description": "SQL Server query performance tuning. Analyzes execution plans, identifies anti-patterns, recommends indexes, rewrites slow queries, and runs DMV diagnostics against live instances.",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/sql-server-query-tuner"
-      ]
-    },
-    {
-      "name": "linkedin-articles",
-      "description": "Write, optimize, and polish LinkedIn articles for maximum engagement and reach. Supports writing from scratch, optimizing drafts, crafting hooks and headlines, and improving SEO and hashtag strategy.",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/linkedin-articles"
-      ]
+      "name": "skizha-skills",
+      "description": "Community skills for Claude Code — humanize text, engineer prompts, tune SQL Server queries, and write LinkedIn articles.",
+      "source": "./"
     }
   ]
 }

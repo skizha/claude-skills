@@ -2,14 +2,14 @@
 
 A plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that adds specialized workflows and domain knowledge.
 
-## Available plugins
+## Available skills
 
-| Plugin | Skills | What it does |
-|--------|--------|-------------|
-| humanize | [humanize](skills/humanize) | Detects and rewrites 24 categories of AI-generated text patterns. Based on Wikipedia's "Signs of AI writing" guide. |
-| prompt-creator | [prompt-creator](skills/prompt-creator) | Expert prompt engineering for AI models (especially Claude). Creates prompts from scratch, improves underperforming prompts, designs system prompts, structures chain-of-thought and few-shot examples, and builds RAG and agentic prompts. Based on Anthropic's official prompt engineering docs. |
-| sql-server-query-tuner | [sql-server-query-tuner](skills/sql-server-query-tuner) | SQL Server query performance tuning — analyzes execution plans, identifies anti-patterns, recommends indexes, rewrites slow queries, and runs DMV diagnostics against live instances. |
-| linkedin-articles | [linkedin-articles](skills/linkedin-articles) | Write and optimize LinkedIn articles — 5 structure templates, 8 hook formulas, headline patterns, SEO keyword placement, and hashtag strategy. |
+| Skill | What it does |
+|-------|-------------|
+| [humanize](skills/humanize) | Detects and rewrites 24 categories of AI-generated text patterns. Based on Wikipedia's "Signs of AI writing" guide. |
+| [prompt-creator](skills/prompt-creator) | Expert prompt engineering for AI models (especially Claude). Creates prompts from scratch, improves underperforming prompts, designs system prompts, structures chain-of-thought and few-shot examples, and builds RAG and agentic prompts. Based on Anthropic's official prompt engineering docs. |
+| [sql-server-query-tuner](skills/sql-server-query-tuner) | SQL Server query performance tuning — analyzes execution plans, identifies anti-patterns, recommends indexes, rewrites slow queries, and runs DMV diagnostics against live instances. |
+| [linkedin-articles](skills/linkedin-articles) | Write and optimize LinkedIn articles — 5 structure templates, 8 hook formulas, headline patterns, SEO keyword placement, and hashtag strategy. |
 
 ## Installation
 
@@ -17,10 +17,10 @@ A plugin marketplace for [Claude Code](https://docs.anthropic.com/en/docs/claude
 
 ```
 /plugin marketplace add skizha/agent-skills
-/plugin install humanize@skizha-skills
+/plugin install skizha-skills@skizha-skills
 ```
 
-The skills will be available in your next Claude Code session. Invoke them with `/humanize` or by asking Claude to humanize text, or trigger the SQL tuner by asking Claude to tune a query.
+All skills are available in your next Claude Code session under the `skizha-skills` namespace.
 
 ### Local testing
 
@@ -32,14 +32,19 @@ claude --plugin-dir /path/to/agent-skills
 
 ## Usage
 
-Skills trigger automatically based on your prompt. For example:
+Skills trigger automatically based on your prompt. You can also invoke them directly:
+
+| Skill | Direct invocation |
+|-------|------------------|
+| humanize | `/skizha-skills:humanize` |
+| prompt-creator | `/skizha-skills:prompt-creator` |
+| sql-server-query-tuner | `/skizha-skills:sql-server-query-tuner` |
+| linkedin-articles | `/skizha-skills:linkedin-articles` |
 
 **Humanize** — activates when you say things like:
 - "humanize this text"
 - "make this sound less robotic"
 - "remove AI writing patterns from this file"
-
-You can also invoke it directly with `/humanize`.
 
 **Prompt Creator** — activates when you say things like:
 - "write a prompt for a customer service chatbot"
@@ -74,6 +79,7 @@ Includes 5 article structure templates (Problem-Solution, Listicle, Story-Driven
 ```
 agent-skills/
 ├── .claude-plugin/
+│   ├── plugin.json         # plugin manifest
 │   └── marketplace.json    # marketplace manifest
 └── skills/
     └── skill-name/
@@ -83,15 +89,14 @@ agent-skills/
         └── assets/            # optional -- templates, images, etc.
 ```
 
-The `marketplace.json` defines plugins, each of which bundles one or more skills. Each skill lives under `skills/` with at least a `SKILL.md` containing YAML frontmatter (`description` field) and markdown instructions.
+The `marketplace.json` defines a single plugin (`skizha-skills`) that bundles all skills. Each skill lives under `skills/` with at least a `SKILL.md` containing YAML frontmatter (`description` field) and markdown instructions. Skills are auto-discovered from the `skills/` directory.
 
 ## Contributing
 
 To add a new skill:
 
 1. Create a folder under `skills/` with a `SKILL.md` file
-2. Add your plugin entry to `.claude-plugin/marketplace.json` with a `name`, `description`, and `skills` array pointing to your skill folders
-3. Submit a PR
+2. Submit a PR — the skill is auto-discovered from `skills/` and no changes to `marketplace.json` are needed
 
 ## License
 
