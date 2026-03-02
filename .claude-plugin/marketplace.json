@@ -34,6 +34,15 @@
       "skills": [
         "./skills/sql-server-query-tuner"
       ]
+    },
+    {
+      "name": "linkedin-articles",
+      "description": "Write, optimize, and polish LinkedIn articles for maximum engagement and reach. Supports writing from scratch, optimizing drafts, crafting hooks and headlines, and improving SEO and hashtag strategy.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/linkedin-articles"
+      ]
     }
   ]
 }
