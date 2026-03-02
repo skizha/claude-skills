@@ -1,3 +1,7 @@
+# Claude Code local settings
+.claude/
+**/.claude/
+
 # OS
 .DS_Store
 Thumbs.db

@@ -1,0 +1,8 @@
+{
+  "name": "skizha-skills",
+  "description": "Community skills for Claude Code — humanize text, engineer prompts, tune SQL Server queries, and write LinkedIn articles.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sanjesh"
+  }
+}
