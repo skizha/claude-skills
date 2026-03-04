@@ -46,8 +46,7 @@ Before writing JSON, sketch mentally:
 }
 ```
 
-- Element templates → `references/element-templates.md`
-- JSON schema & sizing → `references/json-schema.md`
+- Element reference (templates, sizing, coordinates) → `references/element-templates.md`
 - Colors → `references/color-palette.md` (single source of truth)
 - Use meaningful IDs (`auth-box`, `api-arrow-1`), never `elem1`
 - For large diagrams: build section-by-section, not all at once
@@ -80,4 +79,8 @@ playwright install chromium
 
 ## Step 5 — Validate & Iterate
 
-Check the PNG against `references/checklist.md`. Fix issues and re-render. Expect 2–4 iterations.
+Fix and re-render (expect 2–4 iterations). Check:
+- **Isomorphism**: structure communicates without text
+- **Education**: teaches concrete details, not just labels
+- Text fully visible, no clipping; no unintentional overlaps
+- Arrows route cleanly; evidence artifacts present in technical diagrams
